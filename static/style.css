@@ -1,0 +1,26 @@
+body {
+    --utter: #bd003a;
+
+    font-family: sans-serif;
+    margin: 0;
+}
+body > *:not(h1) {
+    width: max(60%, 300px);
+    margin: 0 auto;
+}
+.utter {
+    color: var(--utter);
+}
+.green {
+    color: green;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    background-color: var(--utter);
+}
+h2 {
+    text-align: center;
+    color: var(--utter);
+}
