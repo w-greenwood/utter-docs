@@ -14,6 +14,7 @@ Scope: Walk though of every step of the process between getting into the studio 
 	|	|---images
 	|	|	|---radioco
 	|	|	|	|---media
+	|	|	|	|---steps
 	|	|	|---highlander
 	|
 	|---docs

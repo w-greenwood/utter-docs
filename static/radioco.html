@@ -1,14 +1,38 @@
 <html>
     <header>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
         <title>Using Radio.Co on Utter</title>
     </header>
     <body>
         <div>
+            <h1>Radio Co Guide</h1>
             <p>Radio.Co is the platform used by Utter Radio to schedule and host online broadcasts.</p>
         </div><div>
-            <h1>Step-By-Step</h1>
-
+            <h1>Step-By-Step | Live Shows</h1>
+            <p>
+                Scheduling a live broadcast on Utter's Radio Co page is fairly straightforward.<br>
+                Let's imagine Johnny Utter has a live talk show going out every week at 4pm on a Wednesday. The first thing you need to do is set up a schedule, so Radio.Co know when the show will be going out.
+            </p><img src="/media/images/radioco/steps/sidebar.schedule.png" width="50%">
+            <p>
+                From the sidebar, open the Schedule tab, and click the Add Event button on the top right. A popup will open with settings for the scheduled event.
+            </p><img src="/media/images/radioco/steps/schedule.createvent.guide.png" width="80%">
+            <p>
+                From here, you input the start time, duration, and day of the broadcast. You can set it to repeat with an interval of 1, 2, or 4 weeks.<br>
+                The playlist selected at the top will play out if Radio Co is not receiving a feed from Utter.<br>
+                For the purposes of Johnny Utter's talk show, the Event Type will be set to LiveDJ, since that allows you to tell Radio Co who the host is.<br>
+                On the right, there is also an option to record the broadcast. Broadcasts that are recorded are saved in the Recordings tab in the Media view.<br>
+                Likewise, you'll want to leave the track information at default, as that way it will use the metadata sent out by Utter.<br>
+                When you click Create Event, you will see the show added to the weekly schedule. Once you've done that, you need to make sure Utter can actually send a feed to Radio Co.<br>
+                Return to the dashboard and find the Host, Port, and Pass details at the top right.
+            </p><img src="/media/images/radioco/steps/dashboard.topbar.png" width="100%">
+            <p>
+                These are the details that BUTT needs in order to send its feed to Radio Co.<br>
+                To check that they match, open BUTT, click settings, and under server settings, click edit. A new wndow will open containing the server Address (host), Port, and Passowrd.
+            </p><img src="/media/images/radioco/steps/buttsettings.png" width="100%">
+            <p>
+                As long as these details match, BUTT will be able to connect and broadcast Utter through Radio Co. From here, all you need to do is make sure Johnny Utter is in the studio on time and press the Connect to Server button BUTT at the start of the scheduled show.
+            </p>
         </div><div>
             <h1>Comprehensive</h1>
             <h2>Dashboard</h2>
@@ -109,4 +133,4 @@
             </div>
         </div>
     </body>
-</html> 
+</html>
