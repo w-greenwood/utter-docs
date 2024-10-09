@@ -24,3 +24,7 @@ h2 {
     text-align: center;
     color: var(--utter);
 }
+
+img {
+    margin: 0 auto;
+}

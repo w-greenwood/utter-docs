@@ -7,23 +7,20 @@ Scope: Walk though of every step of the process between getting into the studio 
 ## Directory structure
 
 	utter-docs
-	|---static
-	|---panorama
-	|---media
-	|   |---panorama
-	|	|---images
-	|	|	|---radioco
-	|	|	|	|---media
-	|	|	|	|---steps
-	|	|	|---highlander
+	|---radioco
+	|	|---media
 	|
-	|---docs
-	    |---scripts
+	|---highlander
+	|	|---media
+	|
+	|---panorama
+	|	|---media
+	|
+	|---scripts
 
 ### Notes
 
-please put all shared media into media/ and all images for the creation of panoramas into the media/panorama/ directory.
-All stylesheets should be in the root directory.
+Inteded to be as simple as possible, put all shared media in the root directory. Or, if there is a lot, create a media directory in the root folder.
 
 ## To-do
 
@@ -55,7 +52,6 @@ All stylesheets should be in the root directory.
 
 - Jeremy
 	- Write the written docs
-		- Radio.co -> by end of the week
 		- Highlander -> by date of other video elements
 	- Write the scrips on all video element -> aiming to shoot week 6 starting 21st
 - Will
