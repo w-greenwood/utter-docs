@@ -28,3 +28,10 @@ h2 {
 img {
     margin: 0 auto;
 }
+details{
+    text-align: center;
+}
+details summary{
+    cursor: pointer;
+    list-style: none;
+}
