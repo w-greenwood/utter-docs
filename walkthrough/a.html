@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../panorama.css">
+		<title>Utter Radio Guides - Studio A</title>
+	</head>
+	<body>
+		<div id="progress"></div>
+		<nav>
+			<a href="../..">Home</a>
+			<a href="../a">Studio A (walkthrough)</a>
+			<a href="../b">Studio B (walkthrough)</a>
+			<a href="../c">Studio C (walkthrough)</a>
+			<a href="../../highlander">Highlander</a>
+			<a href=".">radio.co</a>
+		</nav>
+		<script src="../three.min.js"></script>
+		<script src="../panolens.min.js"></script>
+		<script>
+
+var panorama, panorama2, panorama3, viewer, progress, progressElement;
+
+progressElement = document.getElementById( 'progress' );
+
+function onEnter ( event ) {
+	progressElement.style.width = 0;
+	progressElement.classList.remove( 'finish' );
+}
+
+function onProgress ( event ) {
+	progress = event.progress.loaded / event.progress.total * 100;
+	progressElement.style.width = progress + '%';
+	if ( progress === 100 ) {
+		progressElement.classList.add( 'finish' );
+	}
+}
+
+control_gv = new PANOLENS.ImagePanorama('https://data.ozva.co.uk/pano/a/control-gv.jpg');
+control_gv.addEventListener('progress', onProgress);
+control_gv.addEventListener('enter', onEnter);
+
+control_seat = new PANOLENS.ImagePanorama('https://data.ozva.co.uk/pano/a/control-seat.jpg');
+control_seat.addEventListener('progress', onProgress);
+control_seat.addEventListener('enter', onEnter);
+
+live_gv = new PANOLENS.ImagePanorama('https://data.ozva.co.uk/pano/a/live-gv.jpg');
+live_gv.addEventListener('progress', onProgress);
+live_gv.addEventListener('enter', onEnter);
+
+control_gv.link( control_seat, new THREE.Vector3( -2302.98, 358.27, -4414.74 ) );
+control_seat.link( control_gv, new THREE.Vector3( 4954.53, 319.21, -556.71 ) );
+
+control_gv.link( live_gv, new THREE.Vector3( 4954.53, 319.21, -556.71 ) );
+live_gv.link( control_gv, new THREE.Vector3( -3399.16, 1015.42, -5000.00 ) );
+
+viewer = new PANOLENS.Viewer();
+viewer.add( control_gv, live_gv, control_seat );
+
+		</script>
+	</body>
+</html>

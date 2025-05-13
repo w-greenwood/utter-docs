@@ -9,34 +9,23 @@ Scope: Walk though of every step of the process between getting into the studio 
 	utter-docs
 	|---radioco
 	|	|---media
+	|	|---index.html
 	|
 	|---highlander
 	|	|---media
+	|	|---index.html
 	|
-	|---panorama
-	|	|---media
+	|---walkthrough
+	|	|---a.html
+	|	|---b.html
+	|	|---c.html
 	|
-	|---scripts
+	|---index.html
+	
 
 ### Notes
 
-Inteded to be as simple as possible, put all shared media in the root directory. Or, if there is a lot, create a media directory in the root folder.
-
-## To-do
-
-## VIDEO CONTENT
-- Studio A&B
-	- KVM & Synergy
-	- Each of the  monitors
-	- The server rack
-	- Faders
-	- Monitor pannel
-	- Butt
-	- The phones
-	- The intercom
-	- Live rooms
-	- The light (A)
-- Studio C&D
+Panorama images are large so are not tracked and imported from the "data" OzVa subdomain.
 
 ## Web content
 
@@ -45,19 +34,3 @@ Inteded to be as simple as possible, put all shared media in the root directory.
 	- making a cartwall
 	- recording to highlander
 	- listen back
-- radio.co
-	- scheduling
-	- uploading shows
-	- get started ASAP
-
-- Jeremy
-	- Write the written docs
-		- Highlander -> by date of other video elements
-	- Write the scrips on all video element -> aiming to shoot week 6 starting 21st
-- Will
-	- Take the 360deg pictures
-	- Setup the website
-
-### Next meeting date:
-
-Friday 18th October @ 5pm
