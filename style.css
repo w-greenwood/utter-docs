@@ -64,3 +64,21 @@ dd {
 dd > p {
 	margin: 0
 }
+
+details span {
+	font-weight: bold;
+	color: #a8002c;
+}
+
+details dfn {
+	display: inline-block;
+	font-style: normal;
+	font-weight: bold;
+	width: fit-content;
+	padding: 0px 2px 0px 2px;
+	aspect-ratio: 1 / 1;
+	color: #a8002c;
+	border: 2px solid #a8002c;
+	border-radius: 100%;
+	margin: 0;
+}
