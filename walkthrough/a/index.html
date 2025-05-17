@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="../panorama.css">
+		<title>Utter Radio Guides - Studio A</title>
+	</head>
+	<body>
+		<div id="progress"></div>
+		<nav>
+			<a href="../..">Home</a>
+			<a href=".">Studio A (walkthrough)</a>
+			<a href="../b">Studio B (walkthrough)</a>
+			<a href="../c">Studio C (walkthrough)</a>
+			<a href="../../highlander">Highlander</a>
+			<a href="../../radioco">radio.co</a>
+			<a href="../../butt">Butt</a>
+		</nav>
+		<div id="stream" class="description">
+			<h4>Stream PC</h4>
+			<p>
+				The stream PC is used to stream to Utter's internet radio service called <a href="../radioco">"radio.co"</a>. It does this using a peice of software called "Butt".
+			</p>
+		</div>
+		<div id="edit" class="description">
+			<iframe width="356" height="207" src="https://www.youtube.com/embed/uIRNmRi_e7E?si=M8GwES73EDdL88_V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			<h4>Edit PC</h4>
+			<p>
+				The edit PC is used for recording and getting audio onto the cartwall via a peice of software called <a href="../highlander">"Highlander"</a>. Follow the linked guides on setting up a recording or using pre-recorded material in your shows. You can get audio on and off the computer via the internet (services such as OneDrive or Google Drive) or via USB stick.
+			</p>
+		</div>
+		<div id="onair" class="description">
+			<h4>OnAir PC</h4>
+			<p>
+				This is the computer that controls OnAir Control via the small keypad on the studio desk. OnAir is outside of the scope of these guides, but is taught in L5 Radio Studio. This computer is also displays in the live room, and both rooms have control over the cursor. It is ususally used to bring up scripts or notes for the presenters to refer to.
+			</p>
+		</div>
+		<div id="skype" class="description">
+			<h4>Skype PC</h4>
+			<p>
+				This computer is usually used to set up skype or ipDTL calls to get contributors on air live. ipDTL is outside of the scope of this walthrough and is covered in L5 Radio Studio.
+			</p>
+		</div>
+		<div id="cartwall" class="description">
+			<iframe width="356" height="207" src="https://www.youtube.com/embed/hPt2e1i7pKY?si=zHq9GABFKASu8tU-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			<h4>Cartwall</h4>
+			<p>
+				The cartwall is used to playout audio live such as idents, jingles, beds etc. Audio can be loaded onto it with <a href="../highlander">Highlander</a>. Read more about how it is opperated <a href="../highlander#cartwall">here</a>.
+			</p>
+		</div>
+		<div id="kvm" class="description">
+			<h4>The "KVM"</h4>
+			<p>
+				There is only one keyboard and mouse in the radio studios, but 4 computers. The computer that the keybord and mouse control is controled by the <a href="https://en.wikipedia.org/wiki/KVM_switch">"KVM"</a>. Each of the PCs has a different desktop color which corresponds to a button on the front of the KVM, if you press one of these, the control will switch to that computer.
+			</p>
+			<p>
+				To make things easier for the studio manager, theres another peice of software called "Synergy" on the green (edit) PC. This allows the studio manager to simply "tap" the mouse on the side of the display, automatically switching between them. This will only work if the green (edit) PC is selected on the KVM.
+			</p>
+		</div>
+		<div id="faders" class="description">
+			<iframe width="356" height="207" src="https://www.youtube.com/embed/R3szZ9Bjq5A?si=qa-CtINsmeryCi9V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			<h4>Information about the faders</h4>
+			<p>
+			</p>
+		</div>
+		<div id="comms" class="description">
+			<iframe width="356" height="207" src="https://www.youtube.com/embed/BOswtydhykg?si=rLdIRhPjL0sRAOMa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			<h4>Information about comms</h4>
+			<p>
+			</p>
+		</div>
+		<div id="monitor" class="description">
+			<iframe width="356" height="207" src="https://www.youtube.com/embed/NN0YqQrLVHo?si=urIHdauFGdtE1fzm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+			<h4>Information about the montor pannel</h4>
+			<p>
+			</p>
+		</div>
+		<script src="../three.min.js"></script>
+		<script src="../panolens.min.js"></script>
+		<script>
+
+var control_gv, control_seat, live_gv, corridor, viewer, progress, progressElement;
+
+progressElement = document.getElementById( 'progress' );
+
+function onEnter ( event ) {
+	progressElement.style.width = 0;
+	progressElement.classList.remove( 'finish' );
+}
+
+function onProgress ( event ) {
+	progress = event.progress.loaded / event.progress.total * 100;
+	progressElement.style.width = progress + '%';
+	if ( progress === 100 ) {
+		progressElement.classList.add( 'finish' );
+	}
+}
+
+control_gv = new PANOLENS.ImagePanorama('media/control-gv.jpg');
+control_gv.addEventListener('progress', onProgress);
+control_gv.addEventListener('enter', onEnter);
+
+control_seat = new PANOLENS.ImagePanorama('media/control-seat.jpg');
+control_seat.addEventListener('progress', onProgress);
+control_seat.addEventListener('enter', onEnter);
+
+live_gv = new PANOLENS.ImagePanorama('media/live-gv.jpg');
+live_gv.addEventListener('progress', onProgress);
+live_gv.addEventListener('enter', onEnter);
+
+corridor = new PANOLENS.ImagePanorama('media/corridor.jpg');
+corridor.addEventListener('progress', onProgress);
+corridor.addEventListener('enter', onEnter);
+
+// control_gv links and spots
+
+control_gv.link( control_seat, new THREE.Vector3(5000.00, -1506.55, -1428.69) );
+control_gv.linkedSpots.at(-1).addHoverText("Sit down");
+control_gv.link( corridor, new THREE.Vector3(1666.11, -247.88, 5000.00) );
+control_gv.linkedSpots.at(-1).addHoverText("Corridor (to the live room)");
+
+// control_seat links and spots
+
+control_seat.link( control_gv, new THREE.Vector3(-3312.99, 277.58, 5000.00) );
+control_seat.linkedSpots.at(-1).addHoverText("Stand up");
+control_seat.link( corridor, new THREE.Vector3(1931.55, 252.11, 5000.00) );
+control_seat.linkedSpots.at(-1).addHoverText("Corridor (to the live room)");
+
+info_stream = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
+info_stream.position.set(338.14, -176.63, -4997.20);
+info_stream.addHoverElement(document.getElementById('stream'), 160);
+control_seat.add(info_stream);
+
+info_edit = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
+info_edit.position.set(3864.41, -371.68, -5000.00);
+info_edit.addHoverElement(document.getElementById('edit'), 160);
+control_seat.add(info_edit);
+
+info_onair = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
+info_onair.position.set(5000.00, -303.90, -1302.43);
+info_onair.addHoverElement(document.getElementById('onair'), 160);
+control_seat.add(info_onair);
+
+info_skype = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
+info_skype.position.set(5000.00, -372.74, 3893.86);
+info_skype.addHoverElement(document.getElementById('skype'), 160);
+control_seat.add(info_skype);
+
+info_cartwall = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
+info_cartwall.position.set(2348.70, -194.81, 5000.00);
+info_cartwall.addHoverElement(document.getElementById('cartwall'), 160);
+control_seat.add(info_cartwall);
+
+info_kvm = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
+info_kvm.position.set(4901.83, -4314.56, -5000.00);
+info_kvm.addHoverElement(document.getElementById('kvm'), -160);
+control_seat.add(info_kvm);
+
+info_faders = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
+info_faders.position.set(5000.00, -4736.28, 2132.64);
+info_faders.addHoverElement(document.getElementById('faders'), -160);
+control_seat.add(info_faders);
+
+info_intercom = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
+info_intercom.position.set(5000.00, -3287.25, 1860.15);
+info_intercom.addHoverElement(document.getElementById('comms'), -160);
+control_seat.add(info_intercom);
+
+info_monitor = new PANOLENS.Infospot( 300, PANOLENS.DataImage.Info );
+info_monitor.position.set(2277.37, -2319.63, 5000.00);
+info_monitor.addHoverElement(document.getElementById('monitor'), -160);
+control_seat.add(info_monitor);
+
+// corridor links and spots
+
+corridor.link( control_gv, new THREE.Vector3(-5000.00, -531.91, -334.63) );
+corridor.linkedSpots.at(-1).addHoverText("the control room");
+corridor.link( live_gv, new THREE.Vector3(-3329.62, -637.63, -5000.00) );
+corridor.linkedSpots.at(-1).addHoverText("The live room");
+
+// live_gv links and spots
+
+live_gv.link( corridor, new THREE.Vector3(-3623.74, -290.44, 5000.00) );
+live_gv.linkedSpots.at(-1).addHoverText("Corridor (back to control room)");
+
+viewer = new PANOLENS.Viewer({output: 'console'});
+viewer.add( control_gv, live_gv, control_seat, corridor );
+
+		</script>
+	</body>
+</html>

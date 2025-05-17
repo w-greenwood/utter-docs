@@ -1,6 +1,7 @@
 body {
 	font-family: sans-serif;
 	margin: 0;
+	overflow: hidden;
 }
 
 nav {
@@ -28,4 +29,17 @@ nav > a {
 
 #progress.finish {
 	opacity: 0;
+}
+
+div.description {
+	display: none;
+	width: 356px;
+	height: 257px;
+	background-color: white;
+	box-shadow: 0px 0px 6px gray;
+	overflow: scroll;
+}
+
+div.description > *:not(iframe) {
+	margin: 5px;
 }
