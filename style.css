@@ -72,6 +72,7 @@ details > details {
 mark {
 	font-weight: bold;
 	color: #a8002c;
+	background-color: transparent;
 }
 
 dfn {
